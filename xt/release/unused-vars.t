@@ -1,12 +1,4 @@
 #!perl
-
-BEGIN {
-  unless ($ENV{RELEASE_TESTING}) {
-    require Test::More;
-    Test::More::plan(skip_all => 'these tests are for release candidate testing');
-  }
-}
-
 #
 # This file is part of Dist-Zilla-Plugin-Test-Pod-LinkCheck
 #
@@ -17,6 +9,8 @@ BEGIN {
 #
 
 use Test::More;
-eval 'use Test::CPAN::Changes';
-plan skip_all => 'Test::CPAN::Changes required for this test' if $@;
-changes_ok();
+
+eval "use Test::Vars";
+plan skip_all => "Test::Vars required for testing unused vars"
+  if $@;
+all_vars_ok();

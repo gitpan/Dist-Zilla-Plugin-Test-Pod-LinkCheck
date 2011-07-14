@@ -1,5 +1,9 @@
 Revision history for Dist-Zilla-Plugin-Test-Pod-LinkCheck
 
-1.000 2011-04-11
+1.001     2011-07-14T23:49:41Z
+
+  - Superficial dist/release changes
+
+1.000     2011-04-12T00:28:34Z
 
   - Initial release
